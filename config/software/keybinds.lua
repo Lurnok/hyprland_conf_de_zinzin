@@ -150,13 +150,13 @@ hl.bind(Mod .. " + " .. "left", hl.dsp.focus({ workspace = "r-1" }))
 
 hl.bind(Mod .. " + " .. "right", hl.dsp.focus({ workspace = "r+1" }))
 
-hl.bind(Mod .. " + " .. "CTRL" .. " + " .. "left", hl.dsp.window.move({ direction = "left" , follow = false}))
+hl.bind(Mod .. " + " .. "CTRL" .. " + " .. "left", hl.dsp.window.move({ workspace = "r-1" , follow = false}))
 
-hl.bind(Mod .. " + " .. "CTRL" .. " + " .. "right", hl.dsp.window.move({ direction = "right" , follow = false}))
+hl.bind(Mod .. " + " .. "CTRL" .. " + " .. "right", hl.dsp.window.move({ workspace = "r+1" , follow = false}))
 
-hl.bind(Mod .. " + " .. "SHIFT" .. " + " .. "left", hl.dsp.window.move({ direction = "left" }))
+hl.bind(Mod .. " + " .. "SHIFT" .. " + " .. "left", hl.dsp.window.move({ workspace = "r-1" }))
 
-hl.bind(Mod .. " + " .. "SHIFT" .. " + " .. "right", hl.dsp.window.move({ direction = "right" }))
+hl.bind(Mod .. " + " .. "SHIFT" .. " + " .. "right", hl.dsp.window.move({ workspace = "r+1" }))
 
 --# WINDOW MANAGEMENT (ALT)
 
