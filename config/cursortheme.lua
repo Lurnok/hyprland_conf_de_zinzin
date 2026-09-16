@@ -4,4 +4,4 @@
 
 ---@module 'hl'
 
-local cursortheme = "Bibata-Modern-Classic"
+cursortheme = "Bibata-Modern-Classic"

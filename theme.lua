@@ -9,14 +9,14 @@
 -- LOOKS
 
 -- source = config/looks/decor.conf -> requires manual conversion
--- local decor = require("config.looks.decor")
--- TODO: convert config/looks/decor.conf to .lua and use require()
+local decor = require("config.looks.decor")
+
 
 -- Decoration (Blur, Rounding etc)
 
 -- source = config/looks/animations.conf -> requires manual conversion
--- local animations = require("config.looks.animations")
--- TODO: convert config/looks/animations.conf to .lua and use require()
+local animations = require("config.looks.animations")
+
 
 -- Animations
 
@@ -31,72 +31,9 @@ hl.config({
     },
 })
 
-hl.layer_rule({
-    match = {
-        namespace = "blur on",
-    },
-    match:namespace = "waybar",
-})
+local apps = { "waybar", "swaync-control-center", "swaync-notification-window", "rofi", "swayosd" }
 
-hl.layer_rule({
-    match = {
-        namespace = "blur on",
-    },
-    match:namespace = "swaync-control-center",
-})
-
-hl.layer_rule({
-    match = {
-        namespace = "blur on",
-    },
-    match:namespace = "swaync-notification-window",
-})
-
-hl.layer_rule({
-    match = {
-        namespace = "blur on",
-    },
-    match:namespace = "rofi",
-})
-
-hl.layer_rule({
-    match = {
-        namespace = "blur on",
-    },
-    match:namespace = "swayosd",
-})
-
-hl.layer_rule({
-    match = {
-        namespace = "ignore_alpha 0.5",
-    },
-    match:namespace = "waybar",
-})
-
-hl.layer_rule({
-    match = {
-        namespace = "ignore_alpha 0.5",
-    },
-    match:namespace = "swaync-control-center",
-})
-
-hl.layer_rule({
-    match = {
-        namespace = "ignore_alpha 0.5",
-    },
-    match:namespace = "swaync-notification-window",
-})
-
-hl.layer_rule({
-    match = {
-        namespace = "ignore_alpha 0.5",
-    },
-    match:namespace = "rofi",
-})
-
-hl.layer_rule({
-    match = {
-        namespace = "ignore_alpha 0.5",
-    },
-    match:namespace = "swayosd",
-})
+for _, app in ipairs(apps) do
+    hl.layer_rule({ "blur", match = { namespace = app } })
+    hl.layer_rule({ "ignorezero", match = { namespace = app } })
+end

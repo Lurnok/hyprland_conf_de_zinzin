@@ -4,8 +4,8 @@
 
 ---@module 'hl'
 
-local fileManager = "dolphin"
+fileManager = "dolphin"
 
-local textEditor = "kwrite"
+textEditor = "kwrite"
 
-local polkitAgent = "hyprpolkitagent"
+polkitAgent = "hyprpolkitagent"

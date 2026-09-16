@@ -12,18 +12,18 @@ local Mod = "SUPER"
 
 local Mod2 = "ALT"
 
+
 --# BASE APPS
 
-hl.bind(Mod .. " + " .. "RETURN", hl.dsp.exec_cmd("$terminal"))
+hl.bind(Mod .. " + " .. "RETURN", hl.dsp.exec_cmd(terminal))
 
-hl.bind(Mod .. " + " .. "E", hl.dsp.exec_cmd("$fileManager"))
+hl.bind(Mod .. " + " .. "E", hl.dsp.exec_cmd(fileManager))
 
-hl.bind(Mod .. " + " .. "T", hl.dsp.exec_cmd("$textEditor"))
+hl.bind(Mod .. " + " .. "T", hl.dsp.exec_cmd(textEditor))
 
-hl.bind(Mod .. " + " .. "B", hl.dsp.exec_cmd("$browser"))
+hl.bind(Mod .. " + " .. "B", hl.dsp.exec_cmd(browser))
 
 hl.bind(Mod .. " + " .. "S", hl.dsp.exec_cmd("hyprshot -m region -o " .. os.getenv("HOME") .. "/Pictures/Screenshots -f Screenshot_$(date \"+%Y-%m-%d_%H:%M:%S\" ).png -z"))
-
 --# HYPRLAND MANAGEMENT
 
 hl.bind(Mod .. " + " .. "Q", hl.dsp.window.close())
@@ -150,13 +150,13 @@ hl.bind(Mod .. " + " .. "left", hl.dsp.focus({ workspace = "r-1" }))
 
 hl.bind(Mod .. " + " .. "right", hl.dsp.focus({ workspace = "r+1" }))
 
-hl.bind(Mod .. " + " .. "CTRL" .. " + " .. "left", hl.dsp.window.move({ direction = "r-1" , follow = false}))
+hl.bind(Mod .. " + " .. "CTRL" .. " + " .. "left", hl.dsp.window.move({ direction = "left" , follow = false}))
 
-hl.bind(Mod .. " + " .. "CTRL" .. " + " .. "right", hl.dsp.window.move({ direction = "r+1" , follow = false}))
+hl.bind(Mod .. " + " .. "CTRL" .. " + " .. "right", hl.dsp.window.move({ direction = "right" , follow = false}))
 
-hl.bind(Mod .. " + " .. "SHIFT" .. " + " .. "left", hl.dsp.window.move({ direction = "r-1" }))
+hl.bind(Mod .. " + " .. "SHIFT" .. " + " .. "left", hl.dsp.window.move({ direction = "left" }))
 
-hl.bind(Mod .. " + " .. "SHIFT" .. " + " .. "right", hl.dsp.window.move({ direction = "r+1" }))
+hl.bind(Mod .. " + " .. "SHIFT" .. " + " .. "right", hl.dsp.window.move({ direction = "right" }))
 
 --# WINDOW MANAGEMENT (ALT)
 

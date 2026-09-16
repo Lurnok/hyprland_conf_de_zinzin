@@ -12,11 +12,17 @@
 
 --
 
-local browser = "$(cat os.getenv(\"HOME\")/Dots/Options/browser)"
+local home = "/home/lurnokus"
 
-local terminal = "$(cat os.getenv(\"HOME\")/Dots/Options/terminal)"
+local f = io.open(home .. "/Dots/Options/browser", "r")
+browser = f and f:read("*l") or "firefox"
+if f then f:close() end
 
--- kitty by default, ill make selection later maybe
+local f2 = io.open(home .. "/Dots/Options/terminal", "r")
+terminal = f2 and f2:read("*l") or "kitty"
+if f2 then f2:close() end
+
+
 
 -- PYWAL
 
@@ -110,5 +116,5 @@ local rules = require("config.software.rules")
 -- THEME SPECIFIC SETTINGS
 
 -- source = theme.conf -> requires manual conversion
--- local theme = require("theme")
--- TODO: convert theme.conf to .lua and use require()
+local theme = require("theme")
+
